@@ -5,16 +5,18 @@ on:
     workflows: ["nginx"]
     types:
       - completed
+  push:
+    branches:
+      - nginx
+
 jobs:
-
   build:
-
-    runs-on: ip-172-31-36-165
+    runs-on: self-hosted # or specify the actual runner label you are using
 
     steps:
     - name: Pull Docker image
       run: docker pull prabhusamarla/githubaction-nginx:latest
     - name: Delete Old docker container
-      run: docker rm -f nginx || true
+      run: docker rm -f nginx-container || true
     - name: Run Docker Container
       run: docker run -d -p 80:80 --name nginx-container prabhusamarla/githubaction-nginx

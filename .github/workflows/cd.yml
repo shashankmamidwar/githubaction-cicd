@@ -1,4 +1,4 @@
-name: CD Pipeline
+name: CD nginx pipeline
 
 on:
   workflow_run:

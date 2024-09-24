@@ -1,8 +1,8 @@
-name: CD nginx pipeline
+name: CD Nginx pipeline
 
 on:
   workflow_run:
-    workflows: ["nginx"]
+    workflows: ["Nginx Pipeline"]
     types:
       - completed
   push:

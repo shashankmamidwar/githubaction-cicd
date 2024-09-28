@@ -17,6 +17,6 @@ jobs:
     - name: Pull Docker image
       run: docker pull prabhusamarla/githubaction-nginx:latest
     - name: Delete Old docker container
-      run: docker rm -f nginx || true
+      run: docker rm -f nginx-container || true
     - name: Run Docker Container
       run: docker run -d -p 80:80 --name nginx-container prabhusamarla/githubaction-nginx
